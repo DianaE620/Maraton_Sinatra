@@ -1,0 +1,19 @@
+<div class="centrar">Finalizaste el juego<br>
+Estos son tus resultados
+</div>
+<br><br>
+<div>Jugaste : <%=@deck_name%></div>
+<br>
+
+<% for i in 0...@respuestas.length %>
+  <p> Tu respuesta: <%=@respuestas[i]%> </p> 
+  <p> Respuesta correcta: <%=@questions[i].answer3%> </p>
+  <br> 
+<% end %>
+  
+  <br>
+  <div> Errores: <%=@round.wrong%> </div>
+  <div> Aciertos: <%=@round.right%> </div>
+  <div> Usuario: <%= @user.name %> </div>
+
+

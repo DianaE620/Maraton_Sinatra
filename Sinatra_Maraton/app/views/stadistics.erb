@@ -1,0 +1,25 @@
+<br>
+<div>Tus Estaditicas :)</div>
+<br>
+<div>Nombre de Usuario: <%= @user.name%>  </div>
+<br>
+<div>Email: <%= @user.email%>  </div>
+<br>
+  <% aciertos = 0 %>
+  <% no_rondas = 0 %>
+<% @rounds.each_with_index do |r, i| %>
+
+<div><%="Ronda: #{i + 1 },Aciertos: #{r.right}, 
+    Errores: #{r.wrong}, Categoria: #{r.deck.name}"%></div>
+    <% aciertos += r.right %>
+    <% no_rondas = i + 1%>
+<% end %>
+
+<br><br>
+
+<div> Tu promedio: <%= aciertos / no_rondas.to_f %> </div>
+
+<br><br>
+<a href='/profile/<%="#{session[:id]}"%>' class="button">Regresar a mi perfil</a>
+
+

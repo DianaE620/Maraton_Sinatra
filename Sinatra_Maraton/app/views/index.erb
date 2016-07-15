@@ -1,0 +1,22 @@
+  <div class="header"> 
+    <br>
+    <div>¡Maraton!</div> 
+    <br>
+    <div>Bienvenido al juego<br><br>
+      Inicia sesión para continuar
+    </div>
+    <br>
+    <a class="button" href="/login">Ir a login</a>
+
+  </div>
+  <br><br>
+
+  <% error = params[:error]%>
+
+  <% if error == "1" %>
+
+    <div class="error">Tienes que iniciar sesión para acceder. Ve a login</div>
+
+  <% end %>
+
+  

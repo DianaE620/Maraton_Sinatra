@@ -1,0 +1,22 @@
+<br>
+<form method="post" action="/login">
+  Nombre:<br><br>
+  <input type="text" name="nombre">
+
+  <br><br>
+
+  Password:<br><br>
+  <input type="password" name="pass">
+
+  <br><br>
+
+  <input type="submit" value="Iniciar Sesión">
+
+  <% if @error %>
+    <div class="error"> EL nombre o contraseña son incorrectos <br>
+      Vuelve a intentarlo</div>
+  <% end %>
+
+</form>
+
+

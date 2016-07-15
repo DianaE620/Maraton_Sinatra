@@ -1,0 +1,46 @@
+<br>
+<div>Deck: <%=@deck%></div>
+<br>
+<div class="centrar">A continuación se te mostraran una serie de 
+preguntas<br>
+elige la que creas que sea la respuesta correcta y
+Diviertete :) </div>
+<br><br>
+<div class="boton">Iniciar el juego</div>
+<br><br>
+<div id="cuenta"></div>
+<br>
+
+
+<% @ques.each_with_index do |q, i| %>
+
+<div id='q<%="#{i}"%>' class="pregunta">
+
+<div><%= q.question %></div>
+<br>
+<form id="envio<%="#{i}"%>" action="/respuestas" method="post">
+<select id="r<%="#{i}"%>" name="answer">
+<option value="" selected="selected"></option>
+<option value='<%= "#{q.answer1}" %>'><%= q.answer1 %>
+</option>
+<option value='<%= "#{q.answer2}" %>'><%= q.answer2 %>
+</option>
+<option value='<%= "#{q.answer3}" %>'><%= q.answer3 %>
+</option>
+</select>
+
+<button>Enviar</button>
+</form>
+
+<br><br>
+</div>
+
+<% end %>
+
+<div class="boton2" id="finalizar" 
+style="display:none;">Finalizar</div>
+
+<div class="resultado">lala</div>
+
+<a href='/profile/<%="#{session[:id]}"%>' class="button">Regresar a mi perfil</a>
+  
